@@ -1,0 +1,6 @@
+{
+  "name": "Ascend - NoFap Streak Tracker",
+  "description": "Clean, modern, privacy-first streak and habit tracker with live counters, SOS urge relief breathing exercises, milestone badges, and intelligent reminders.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

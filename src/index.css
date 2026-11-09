@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Noto Sans JP', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  .font-serif-jp {
+    font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  }
+}
+
+/* Washi paper subtle grain texture */
+.washi-texture {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.sumi-texture {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Shoji rice paper subtle cards */
+.shoji-panel-light {
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(220, 214, 202, 0.65);
+  box-shadow: 0 4px 20px -2px rgba(90, 80, 65, 0.04);
+}
+
+.shoji-panel-dark {
+  background: rgba(28, 28, 30, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3);
+}
+
+/* Ink ripple keyframe */
+@keyframes inkRipple {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.animate-ink-ripple {
+  animation: inkRipple 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Zen gentle breathing circle */
+@keyframes zenBreath {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.45;
+  }
+  28.5% {
+    /* Inhale 4s of 14s total = ~28.5% */
+    transform: scale(1.15);
+    opacity: 0.85;
+  }
+  57.1% {
+    /* Hold 4s of 14s = ~57.1% */
+    transform: scale(1.15);
+    opacity: 0.85;
+  }
+  100% {
+    /* Exhale 6s of 14s = 100% */
+    transform: scale(0.85);
+    opacity: 0.45;
+  }
+}
+
+.animate-zen-breath {
+  animation: zenBreath 14s ease-in-out infinite;
+}
+
+/* Slowly drifting sakura petals */
+@keyframes sakuraFall {
+  0% {
+    transform: translateY(-20px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(105vh) translateX(45px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-sakura-1 {
+  animation: sakuraFall 22s linear infinite;
+}
+.animate-sakura-2 {
+  animation: sakuraFall 27s linear 6s infinite;
+}
+.animate-sakura-3 {
+  animation: sakuraFall 20s linear 12s infinite;
+}
+.animate-sakura-4 {
+  animation: sakuraFall 30s linear 18s infinite;
+}
+
+/* Hanko seal stamp style */
+.hanko-stamp {
+  border: 1.5px solid #D9534F;
+  color: #D9534F;
+  box-shadow: inset 0 0 4px rgba(217, 83, 79, 0.15);
+}
+
+/* Minimalist scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
